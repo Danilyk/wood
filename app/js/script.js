@@ -18,4 +18,12 @@ $(document).ready(function(){
   	$(this).children('.win-price-menu__img').css('opacity','1');
   });
 
+
+  $('.article__button').on('click', function () {
+    $(this).text(function(i, text){
+        return text === "Читать полностью" ? "Свернуть" : "Читать полностью";
+    })
+    $(this).siblings('.article__description').toggleClass(' article__description-active');
+    $(this).toggleClass(' article__button-active');
+  });
 });

@@ -1,37 +1,55 @@
+@import 'media.sass'
+@mixin basetitle()
+	padding: 1rem
+	font-size: 4em
+	font-weight: 700
 *
 	margin: 0
 	padding: 0
+
 body
 	font-family: 'PT Sans', sans-serif
 	font-size: 16px
+	@include respond-to(SM)
+		font-size: 12px
+	@include respond-to(XS)
+		font-size: 10px
 img
 	width: 100%
 .container
-	width: 960px
+	max-width: 960px
 	margin: 0 auto
+	&-fw
+		max-width: 1920px
 	&-row
 		display: flex
 		flex-direction: row
 		&-center
 			align-items: center
+		&-left
+			align-items: left
+		&-right
+			justify-content: right
 	&-column
 		display: flex
 		flex-direction: column
 		&-right
 			align-items: right
+		&-center
+			align-items: center
 .header
-	&-logo
-		flex: 1
-	&-descriptor
-		flex: 2
-	&-contact
-		flex: 1
+	padding: 10px 0
+.logo
+	flex: 1
 .descriptor
+	flex: 2
 	text-align: center
 	&__text
-		font-size: 1.5em
+		font-size: 1.8em
+		line-height: 1em
 .contact
 	text-align: right
+	flex: 1
 	&__phone
 		color: #000
 		text-decoration: none
@@ -90,7 +108,7 @@ img
 	padding: 15px 0
 	border-top: 1px solid #000 
 	&__item
-		height: 300px
+		max-height: 300px
 		flex: 1
 		position: relative
 		margin: 1px 1px 
@@ -116,3 +134,84 @@ img
 		cursor: pointer
 	&__text--upkey
 		text-transform: uppercase
+.opt-price
+	&__wrap
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100%
+		padding: 20px 0
+	&__picture
+		width: 50px
+	&__link
+		color: #000
+		font-size: 2em
+.about-us-slide-bg
+	background: url(../img/bg-about-us.jpg) center center no-repeat
+	padding: 40px 0
+.about-us
+	padding: 1.5em 3em
+	background: rgba(255,255,255,0.6)
+	&__title
+		@include basetitle()
+	&__sertificate-text
+		padding: 5px 0
+		font-size: 1.7em
+	&__sertificate-img
+		flex: 1
+		padding: 10px
+	&__reviews-Volodi-text
+		padding: 2em 0 1em
+		text-align: center
+		font-size: 2em
+	&__reviews-Volodi-video
+		width: 200px
+		height: 200px
+		background: #000
+.article
+	&__caption		
+		@include basetitle
+		text-align: center
+		font-weight: 300
+	&__item
+		width: 100%
+		border-bottom: 2px solid #000
+		padding: 20px 0
+	&__title
+		font-size: 2em
+	&__description
+		padding-bottom: 30px
+		font-size: 1em
+		text-indent: 20px
+		overflow: hidden
+		-webkit-transition: max-height .5s, padding .5s
+		transition: max-height .5s, padding .5s
+		max-height: 0
+	&__button
+		width: 180px
+		line-height: 30px
+		margin-top: 20px
+		padding: 0 10px 0 55px
+		background: url(../img/arr-but.png) 0 -5px no-repeat
+		border: 1px solid #000
+		cursor: pointer
+		&:hover
+			background-position: 0 -30px
+			background-color: #000
+			color: #fff
+.article__button-active
+	background-position: 0 -64px !important
+	&:hover
+		background-position: 0 -90px !important
+.article__description-active
+		max-height: 700px !important
+.contact
+	padding: 40px 0
+	&__map
+		width: 100%
+		margin-bottom: 20px
+	&__text
+		font-size: 1.3em
+		line-height: 1.5em
+.footer-wrap
+	
